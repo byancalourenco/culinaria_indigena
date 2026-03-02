@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #f9f5f0;
+}
+
+/* header */
+
+ /* background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2); */
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 94%;
+    max-width: 1200px;
+    padding: 15px 30px;
+   background: rgba(55, 168, 2, 0.747);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* efeito ao rolar a página */
+header.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+/* menu desktop */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* menu mobile*/
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.mobile-nav {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+   background: rgba(55, 168, 2, 0.747);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.mobile-nav a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* home */
+
+.container-indigena {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-image: url('img/fundo_home.png'); /* imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 0 0 30px 30px;
+    gap: 2rem;
+}
+
+
+.texto {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.texto h1{
+     font-family: "Chelsea Market", system-ui;
+     color: #ffffff;
+     font-size: 60px;
+     padding: 30px;
+     margin-top: 60px;
+}
+
+.texto p{
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.texto button{
+    border: 1px solid #fff;
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 30px;
+    margin: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.texto a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.texto button:hover{
+    background-color: #fff;
+    padding: 10px;
+    color: #2ea300;
+    transition: ease .8s;
+    cursor: pointer;
+}
+
+.texto a:hover{
+    color: #2ea300;
+}
+
+.container-indigena img {
+    max-width: 100%;    
+    height: auto;
+    flex: 1;
+    min-width: 300px;
+    margin-top: 80px;
+}
+
+.float {
+    width: 300px; /* ajuste o tamanho da imagem */
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-20px); } /* sobe 20px */
+    100% { transform: translateY(0px); }
+  }
+
+
+/* sobre indigenas */
+
+.secao-indigena {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; 
+    margin-top: 100px; 
+    padding: 100px 5% 100px 5%; 
+    gap: 40px;
+    background-color: #f9f5f0; 
+    flex-wrap: wrap; 
+}
+
+.conteudo-texto {
+    flex: 1;
+    min-width: 320px; 
+    max-width: 600px; 
+}
+
+.titulo {
+    font-size: 2.5rem;
+    color: #2ea300; 
+    margin-bottom: 20px;
+    font-family: "Chelsea Market", system-ui;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.conteudo-texto p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.conteudo-imagem {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.conteudo-imagem img {
+    width: 100%; 
+    max-width: 450px; 
+    height: auto;
+    border-radius: 15px; 
+    transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.conteudo-imagem img:hover {
+    transform: scale(1.02); 
+}
+
+.estatistica-indigena {
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 20px;
+    max-width: 800px;
+}
+
+.texto-superior, .texto-inferior {
+    font-size: 1.2rem;
+    letter-spacing: 2px;     
+    color: #000000;        
+    margin: 0;
+}
+
+.numero-destaque {
+    font-size: clamp(3rem, 10vw, 5.5rem); 
+    color: #2ea300; 
+    margin: 10px 0;
+    line-height: 1;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.05); 
+    font-family: "Chelsea Market", system-ui;
+}
+
+.estatistica-indigena::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #2c5d33; 
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* receitas */
+
+.secao-receitas {
+    padding: 80px 10%;
+    background-color: #f9f5f0; 
+    text-align: center;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-top: 40px;
+}
+
+
+.card-receita {
+    background: white;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+    border: 1px solid #eee;
+}
+
+.card-receita:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-receita img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    margin-bottom: 20px;
+}
+
+.card-receita h3 {
+    font-family: "Chelsea Market", cursive;
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.card-receita p{
+    max-width: 285px;
+    padding: 5px;
+}
+
+.card-receita button {
+    background-color: #2ea300;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 30px;
+}
+
+.card-receita button a{
+   text-decoration: none;
+    color: white;
+}
+
+.card-receita button:hover {
+    background-color: #248200;
+    box-shadow: 0 5px 15px rgba(46, 163, 0, 0.3);
+}
+
+
+.secao-receitas button.ver-todas{
+    margin-top: 30px;
+    background-color: #2ea300;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.secao-receitas button.ver-todas a{
+    text-decoration: none;
+    color: white;
+}
+
+/* contato */
+
+.secao-contato {
+    padding: 80px 10%;
+    background-color: #f9f5f0;
+    text-align: center;
+}
+
+.container-formulario {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.form-contato {
+    width: 100%;
+    max-width: 500px;
+    background: #f9f5f0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    resize: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: #777;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background-color: #f9f5f0;
+    padding: 0 5px;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #2ea300;
+}
+
+.form-contato button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2ea300;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-contato button:hover {
+    background-color: #248200;
+    box-shadow: 0 8px 20px rgba(46, 163, 0, 0.3);
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #01a80f;
+    color: #fff;
+    padding: 40px 0 0 0;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 250px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+/* pagina padrao das receitas */
+
+.secao-receita-detalhe {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.conteudo-receita {
+    background-color: #fff;
+    margin-top: 150px;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.conteudo-receita h1 {
+    font-size: 2.2rem;
+    font-family: "Chelsea Market", system-ui;
+    margin-bottom: 1rem;
+    color: #01a80f;
+}
+
+.conteudo-receita img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.conteudo-receita p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.conteudo-receita h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #01a80f;
+}
+
+.conteudo-receita ul,
+.conteudo-receita ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.conteudo-receita ul li,
+.conteudo-receita ol li {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+}
+
+
+/* media */
+
+@media (max-width: 768px) {
+
+    /* menu */
+    .nav-links {
+        display: none; 
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -7px);
+    }
+
+    /* home */
+
+    .texto h1{
+        margin-top: 70px;
+    }
+
+    .container-indigena img{
+        margin-top: 0px;
+        width: 80%;
+    }
+
+    /* sobre indigena */
+
+    .secao-indigena {
+        padding-top: 60px; 
+        margin-top: 0;
+    }
+    
+    .secao-indigena {
+        margin-top: 0; 
+        text-align: center; 
+        padding-top: 60px;
+    }
+
+    .titulo {
+        font-size: 2rem; 
+    }
+
+    .estatistica-indigena {
+        margin: 0 auto; 
+    }
+
+    .conteudo-imagem img {
+        max-width: 90%; 
+        margin-top: 20px;
+    }
+
+     .conteudo-receita h1 {
+        font-size: 1.8rem;
+    }
+
+    .conteudo-receita h3 {
+        font-size: 1.3rem;
+    }
+
+    .conteudo-receita p,
+    .conteudo-receita ul li,
+    .conteudo-receita ol li {
+        font-size: 1rem;
+    }
+
+}

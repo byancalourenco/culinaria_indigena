@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Receita</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Culinária indígena <i class="fa-brands fa-pagelines"></i></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#indigenas">Indígenas</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#indigenas">Indígenas</a>
+            <a href="receitas.html">Receitas</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </header>
+
+    <main class="secao-receita-detalhe">
+        <section class="conteudo-receita">
+            <h1 id="titulo-receita">Receita</h1>
+            <img id="imagem-receita" src="" alt="">
+            <p id="descricao-receita"></p>
+
+            <h3>Ingredientes</h3>
+            <ul id="ingredientes-receita"></ul>
+
+            <h3>Modo de Preparo</h3>
+            <ol id="preparo-receita"></ol>
+        </section>
+         <section id="contato" class="secao-contato">
+            <h1 class="titulo">Fale Conosco</h1>
+            <p>Entre em contato conosco para tirar dúvidas, compartilhar conhecimentos ou saber mais sobre a riqueza da culinária indígena, contribuindo para a valorização e preservação dessas tradições tão importantes para nossa história.</p>
+            
+            <div class="container-formulario">
+                <form class="form-contato">
+                    
+                    <div class="input-group">
+                        <input type="text" required>
+                        <label>Seu nome</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" required>
+                        <label>Seu email</label>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea rows="4" required></textarea>
+                        <label>Sua mensagem</label>
+                    </div>
+
+                    <button type="submit">Enviar mensagem</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Culinária indígena</h2>
+                <p>Descubra os sabores ancestrais da nossa terra.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Indígenas</a></li>
+                    <li><a href="#">Ingredientes</a></li>
+                    <li><a href="#">Receitas</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Email: byanca.lourenco2@.com</p>
+                <p>Telefone: (11) 96358-8922</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Menu Mobile
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        });
+    });
+
+    // Receitas Dinâmicas
+    const receitas = {
+    pirao: {
+        titulo: "Pirão",
+        imagem: "img/receitas/pirao.png",
+        descricao: "Acompanhamento cremoso clássico feito a partir do caldo do cozimento do peixe.",
+        ingredientes: [
+            "500ml de caldo de peixe bem temperado",
+            "1 xícara de farinha de mandioca artesanal",
+            "Coentro e cebolinha picados",
+            "Pimenta-do-reino a gosto"
+        ],
+        preparo: [
+            "Leve o caldo de peixe ao fogo até levantar fervura.",
+            "Reduza o fogo e adicione a farinha de mandioca aos poucos, em chuva, mexendo sempre para não empelotar.",
+            "Cozinhe por cerca de 5 minutos até a farinha estar hidratada e o pirão brilhante.",
+            "Finalize com o cheiro-verde e sirva imediatamente."
+        ]
+    },
+    manicoba: {
+        titulo: "Maniçoba",
+        imagem: "img/receitas/manicoba.png",
+        descricao: "A 'feijoada paraense', feita com a folha da mandioca brava cozida por 7 dias.",
+        ingredientes: [
+            "2kg de maniva (folha de mandioca moída)",
+            "500g de toucinho e lombo porco",
+            "500g de carne seca e paio",
+            "Orelha, pé e rabo de porco (opcional)",
+            "Alho e louro"
+        ],
+        preparo: [
+            "Cozinhe a maniva em água abundante por 7 dias para eliminar o ácido cianídrico.",
+            "No quarto dia, adicione as carnes salgadas e defumadas previamente escaldadas.",
+            "Mantenha o cozimento lento, repondo a água conforme necessário.",
+            "No último dia, ajuste o tempero com alho frito e louro. Sirva com arroz branco e farinha."
+        ]
+    },
+    moqueca: {
+        titulo: "Moqueca",
+        imagem: "img/receitas/moquecas.png",
+        descricao: "Cozido de peixe em panela de barro com temperos frescos e naturais.",
+        ingredientes: [
+            "800g de postas de peixe (Filhote ou Surubim)",
+            "2 cebolas e 3 tomates fatiados",
+            "1 maço de coentro",
+            "Azeite de dendê e leite de coco (opcional, estilo baiano) ou tucupi.",
+            "Sal e limão para marinar"
+        ],
+        preparo: [
+            "Marine o peixe no sal e limão por 30 minutos.",
+            "Em uma panela de barro, faça camadas de cebola, tomate e peixe.",
+            "Regue com o líquido escolhido (tucupi ou leite de coco/dendê).",
+            "Cozinhe em fogo médio sem mexer para não quebrar o peixe até os vegetais murcharem."
+        ]
+    },
+    tacaca: {
+        titulo: "Tacacá",
+        imagem: "img/receitas/tacaca.png",
+        descricao: "Iguaria servida em cuia, com sabor marcante e a dormência do jambu.",
+        ingredientes: [
+            "2 litros de tucupi temperado com alho e chicória",
+            "500g de goma de mandioca (polvilho azedo)",
+            "2 maços de jambu cozidos",
+            "200g de camarão seco salgado",
+            "Pimenta de cheiro a gosto"
+        ],
+        preparo: [
+            "Ferva o tucupi com alho e sal.",
+            "Prepare a goma: dissolva o polvilho em água fria e jogue em água fervente mexendo até ficar transparente.",
+            "Para montar: coloque uma colher de goma na cuia, adicione o tucupi quente.",
+            "Finalize com o jambu e os camarões secos por cima."
+        ]
+    },
+    pamonha: {
+        titulo: "Pamonha",
+        imagem: "img/receitas/pamonha.png",
+        descricao: "Massa de milho verde cozida na própria palha, doce ou salgada.",
+        ingredientes: [
+            "12 espigas de milho verde com palha",
+            "1 xícara de açúcar (se doce) ou sal",
+            "1/2 xícara de óleo ou manteiga derretida",
+            "Queijo coalho para o recheio"
+        ],
+        preparo: [
+            "Rale o milho e passe pela peneira ou bata no liquidificador (menos tradicional).",
+            "Misture o milho ralado com o açúcar (ou sal) e a gordura quente.",
+            "Faça 'copinhos' com as palhas, encha com a massa e um pedaço de queijo.",
+            "Amarre bem e cozinhe em água fervente por 45 minutos."
+        ]
+    },
+    beiju: {
+        titulo: "Beiju (Tapioquinha)",
+        imagem: "img/receitas/beiju.png",
+        descricao: "Disco de massa de mandioca assado na chapa, crocante e macio.",
+        ingredientes: [
+            "500g de goma de mandioca hidratada (massa de tapioca)",
+            "Uma pitada de sal",
+            "Manteiga de garrafa ou coco ralado para rechear"
+        ],
+        preparo: [
+            "Peneire a goma hidratada com sal.",
+            "Aqueça uma frigideira antiaderente sem óleo.",
+            "Espalhe a goma cobrindo o fundo; quando as bordas levantarem e a massa unir, vire.",
+            "Passe manteiga e dobre ao meio."
+        ]
+    },
+    peixe: {
+        titulo: "Peixe Assado",
+        imagem: "img/receitas/peixe.png",
+        descricao: "Peixe inteiro assado na brasa, geralmente recheado com farofa.",
+        ingredientes: [
+            "1 Peixe inteiro (Tambaqui ou Pacu) de aprox. 2kg",
+            "Suco de 3 limões",
+            "Sal, alho e pimenta-do-reino",
+            "Farofa de ovos ou chicória para rechear"
+        ],
+        preparo: [
+            "Limpe o peixe e faça cortes transversais na pele.",
+            "Tempere com limão, alho e sal, deixando marinar por 1 hora.",
+            "Recheie a barriga com a farofa e feche com palitos ou barbante.",
+            "Leve à brasa ou forno alto até a pele dourar e a carne estar suculenta."
+        ]
+    },
+    pato: {
+        titulo: "Pato no Tucupi",
+        imagem: "img/receitas/pato.png",
+        descricao: "O prato mais famoso do Círio de Nazaré.",
+        ingredientes: [
+            "1 pato inteiro",
+            "2 litros de tucupi",
+            "2 maços de jambu",
+            "Alho, chicória do Pará e manjericão",
+            "Limão e sal"
+        ],
+        preparo: [
+            "Asse o pato temperado com limão e alho até ficar macio.",
+            "Corte o pato em pedaços e reserve.",
+            "Ferva o tucupi com os temperos verdes por 20 minutos.",
+            "Adicione o pato assado e o jambu ao tucupi fervente e deixe apurar por 15 minutos."
+        ]
+    },
+    bure: {
+        titulo: "Buré",
+        imagem: "img/receitas/bure.png",
+        descricao: "Mingau salgado ou sopa espessa de milho ou macaxeira típica de certas regiões.",
+        ingredientes: [
+            "500g de macaxeira cozida e batida",
+            "300g de carne de sol em cubinhos",
+            "Leite de coco",
+            "Cheiro-verde"
+        ],
+        preparo: [
+            "Frite a carne de sol até dourar.",
+            "Adicione a macaxeira batida no liquidificador com a água do cozimento.",
+            "Misture o leite de coco e mexa até obter uma consistência de creme grosso.",
+            "Finalize com muito cheiro-verde e sirva quente."
+        ]
+    },
+    poheu: {
+        titulo: "Poheu",
+        imagem: "img/receitas/poheu.png",
+        descricao: "Prato tradicional indígena feito à base de peixe e farinha.",
+        ingredientes: [
+            "Peixe fresco (geralmente miúdos ou pedaços pequenos)",
+            "Farinha de mandioca seca",
+            "Água e sal",
+            "Pimenta malagueta (opcional)"
+        ],
+        preparo: [
+            "Cozinhe o peixe em água e sal até que ele comece a desmanchar.",
+            "Vá adicionando farinha aos poucos e amassando com o caldo até formar uma massa consistente, quase sólida.",
+            "É tradicionalmente consumido com as mãos ou em pequenas porções acompanhando o caldo restante."
+        ]
+    }
+};
+
+    const params = new URLSearchParams(window.location.search);
+    const nomeReceita = params.get("nome");
+
+    if (receitas[nomeReceita]) {
+        const receita = receitas[nomeReceita];
+        document.getElementById("titulo-receita").innerText = receita.titulo;
+        document.getElementById("imagem-receita").src = receita.imagem;
+        document.getElementById("imagem-receita").alt = receita.titulo;
+        document.getElementById("descricao-receita").innerText = receita.descricao;
+
+        const ul = document.getElementById("ingredientes-receita");
+        receita.ingredientes.forEach(i => {
+            const li = document.createElement("li");
+            li.textContent = i;
+            ul.appendChild(li);
+        });
+
+        const ol = document.getElementById("preparo-receita");
+        receita.preparo.forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            ol.appendChild(li);
+        });
+    } else {
+        document.getElementById("titulo-receita").innerText = "Receita não encontrada";
+        document.getElementById("descricao-receita").innerText = "Volte para a página de receitas e escolha outra opção.";
+    }
+    </script>
+</body>
+</html>
