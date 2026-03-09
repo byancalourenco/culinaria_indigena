@@ -15,3 +15,27 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
         mobileNav.classList.remove('active');
     });
 });
+
+// Pega o botão
+const backToTopButton = document.getElementById("backToTop");
+
+// Quando o usuário rolar 300px para baixo, mostra o botão
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+}
+
+// Quando clicar no botão, volta para o topo de forma suave
+backToTopButton.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Isso faz a rolagem ser suave
+    });
+});
